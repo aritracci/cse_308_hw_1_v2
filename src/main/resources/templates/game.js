@@ -299,6 +299,7 @@ function set_user_secret_word() {
 
 
 function get_secret_word() {
+    document.getElementById('game_history_end').style.display = 'none';
     secret_word_user = $('#secret_word').val().toUpperCase();
 
     if (secret_word_user == "") {
@@ -350,6 +351,7 @@ function show_win_screen() {
     $('#user_won').slideDown();
     $('#user_lost').css('display', 'none');
     $('#secret_word_show').val('SECRET WORD: ' + secret_word_comp);
+    copy_game_history();
     var comp_guesses = [], user_guesses = [], comp_scores = [], user_scores = [];
 
 }
@@ -361,6 +363,7 @@ function show_lost_screen() {
     $('#user_lost').slideDown();
     $('#user_won').css('display', 'none');
     $('#secret_word_show').val('SECRET WORD: ' + secret_word_comp);
+    copy_game_history();
     var comp_guesses = [], user_guesses = [], comp_scores = [], user_scores = [];
 
 }
