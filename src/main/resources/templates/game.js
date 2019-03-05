@@ -163,7 +163,7 @@ function add_to_guess_history(guess) {
     	console.log("win");
 		show_win_screen();
 		var win = true;
-		axios.post('http://localhost:8080/addGameRecord',{
+		axios.post('https://jottohw.herokuapp.com/addGameRecord',{
 			username: uname,
 			playerGuess: user_guesses,
 			playerScore: user_scores,
@@ -217,7 +217,7 @@ function add_to_comp_guess_history(guess) {
         date = date.toUTCString();
 		show_lost_screen();
 		var win = false;
-		axios.post('http://localhost:8080/addGameRecord',{
+		axios.post('https://jottohw.herokuapp.com/addGameRecord',{
 			username: uname,
 			playerGuess: user_guesses,
 			playerScore: user_scores,
@@ -330,11 +330,11 @@ function get_secret_word() {
 }
 
 function go_to_profile(){
-	window.location = "http://localhost:8080/profile";
+	window.location = "https://jottohw.herokuapp.com/profile";
 }
 
 function start_new_game(){
-	window.location = "http://localhost:8080/menu";
+	window.location = "https://jottohw.herokuapp.com/menu";
 }
 
 

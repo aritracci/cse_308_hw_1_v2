@@ -67,7 +67,7 @@
    var username = document.cookie.split("=")[1];
    console.log(username);
    function getGames(){
-	   axios.get('http://localhost:8080/users/username/'+username)
+	   axios.get('https://jottohw.herokuapp.com/users/username/'+username)
 		.then(function(response){
 			console.log(response);
 		})
