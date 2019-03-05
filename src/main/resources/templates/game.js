@@ -153,10 +153,7 @@ function add_to_guess_history(guess) {
     guess_p.className = 'guess_history_p';
     guess_history_dom.appendChild(guess_p);
     console.log(guess_formatted);
-    var x = document.cookie;
-    console.log(x);
-    uname = getUsername(x);
-    console.log(uname);
+    uname = document.cookie.split("=")[1]
     if(guess == secret_word_comp){
         var date = new Date();
         date = date.toUTCString();
@@ -216,7 +213,8 @@ function add_to_comp_guess_history(guess) {
         var date = new Date();
         date = date.toUTCString();
 		show_lost_screen();
-		var win = false;
+        var win = false;
+        var uname = document.cookie.split("=")[1]
 		axios.post('https://jottohw.herokuapp.com/addGameRecord',{
 			username: uname,
 			playerGuess: user_guesses,
