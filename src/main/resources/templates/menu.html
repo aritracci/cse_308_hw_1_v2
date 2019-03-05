@@ -196,7 +196,7 @@
 // 	});
 	
 	function loadGames(callback){
-		var username = document.cookie.split("=")[2];
+		var username = document.cookie.split("=")[1];
 		//make get request call
 		var wins = 0;
 		var lost = 0;
@@ -292,7 +292,7 @@
 		}
 	})
 	
-	document.getElementById("username-tag").innerHTML = document.cookie.split("=")[2] + ", ";
+	document.getElementById("username-tag").innerHTML = document.cookie.split("=")[1] + ", ";
 </script>
 
 </html>
