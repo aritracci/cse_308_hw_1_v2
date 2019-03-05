@@ -10,7 +10,7 @@ function loginUser(){
 		
 		if(check == 0){
 			console.log("in register");
-			axios.post('http://localhost:8080/addusers',{
+			axios.post('https://jottohw.herokuapp.com/addusers',{
 				username: uname,
 				password: paswd
 			})
@@ -23,7 +23,7 @@ function loginUser(){
 					alert("Stick Finger!: Username needs to be UNIQUE");
 				}else{
 					console.log("registered");
-					window.location = "http://localhost:8080/";
+					window.location = "https://jottohw.herokuapp.com/";
 				}
 			    
 			})
@@ -44,7 +44,7 @@ function loginUser(){
 		console.log(uname);
 		console.log(paswd);
 		
-		axios.get('http://localhost:8080/getusers')
+		axios.get('https://jottohw.herokuapp.com/getusers')
 		.then(function(response){
 			console.log("in response");
 			var now = new Date();
@@ -53,7 +53,7 @@ function loginUser(){
 		  	now.setTime(expireTime);
 			for(var i=0; i<response.data.length; i++){
 				if(uname == response.data[i].username && paswd == response.data[i].password){
-					window.location = "http://localhost:8080/menu";
+					window.location = "https://jottohw.herokuapp.com/menu";
 					document.cookie = "username="+response.data[i].username
 					+"; expires=" + now.toGMTString() + +';path=/';
 				}
