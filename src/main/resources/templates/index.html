@@ -12,6 +12,12 @@
       <script src='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.3/js/plugins/foundation.reveal.js'></script>
       <script src = "https://unpkg.com/axios/dist/axios.min.js"></script>
    </head>
+
+   <script>
+      if(document.cookie == null){
+         window.location = "https://jottohw.herokuapp.com/login";
+      }
+   </script>
    <style>
 
    body {
